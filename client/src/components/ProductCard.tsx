@@ -15,49 +15,8 @@ interface ProductCardProps {
   product: IProduct;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { user, loading, error } = useUser();
-  const addToCart = async () => {
-    console.log("user ------>", user);
-    try {
-      const response = await fetch("http://localhost:8000/api/cart", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ productId: product._id, userId: user?._id }),
-      });
-      if (!response.ok) {
-        throw new Error("Failed to add product to cart");
-      }
-      alert("Product added to cart!");
-    } catch (error) {
-      console.error("Error adding product to cart:", error);
-      alert("Error adding product to cart. Please try again.");
-    }
-  };
-
-  const addToWishlist = async () => {
-    console.log("user ------>", user);
-    try {
-      const response = await fetch("http://localhost:8000/api/wishlist", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ productId: product._id, userId: user?._id }),
-      });
-      if (!response.ok) {
-        throw new Error("Failed to add product to wishlist");
-      }
-      alert("Product added to wishlist!");
-    } catch (error) {
-      console.error("Error adding product to wishlist:", error);
-      alert("Error adding product to wishlist. Please try again.");
-    }
-  };
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => { 
+  
 
   return (
     <div className="product-card">
@@ -72,10 +31,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <p className="prodDescription">{product.description}</p>
       <p className="prodPrice">Price: ${product.price.toFixed(2)}</p>
       <p className="stock">Stock: {product.stock}</p>
-      <div className="button-group">
-        <button onClick={addToWishlist}>Add to Wishlist</button>
-        <button onClick={addToCart}>Add to Cart</button>
-      </div>
+      
     </div>
   );
 };
