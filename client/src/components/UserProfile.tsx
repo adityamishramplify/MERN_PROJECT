@@ -37,15 +37,7 @@ const UserProfile: React.FC = () => {
             >
               Add Product
             </button>
-            <button
-              className="navbar-button"
-              onClick={() => navigate("/wishlist")}
-            >
-              Wishlist
-            </button>
-            <button className="navbar-button" onClick={() => navigate("/cart")}>
-              Cart
-            </button>
+
             <button
               onClick={handleLogout}
               className="navbar-button"
