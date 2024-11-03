@@ -1,0 +1,60 @@
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.prodImg {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.prodName {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.prodDescription {
+  font-size: 14px;
+  color: #666;
+  margin: 0px;
+}
+
+.prodPrice {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+  margin: 0px;
+}
+
+.stock {
+  font-size: 14px;
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+.button-group button {
+  padding: 8px 12px;
+  font-size: 14px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-group button:first-child {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.button-group button:last-child {
+  background-color: #28a745;
+  color: #fff;
+}

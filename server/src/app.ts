@@ -6,7 +6,9 @@ import cors from "cors";
 import mainRoutes from "./routes/index";
 import authRoutes from "./routes/authRoute";
 import connectToDatabase from "./config/db";
+import path from "path";
 import "./config/passport";
+
 dotenv.config();
 
 const app = express();
@@ -26,14 +28,17 @@ app.use(
     secret: process.env.SESSION_SECRET || "your_secret_key",
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: process.env.NODE_ENV === "production" }, // Secure cookies in production
+    cookie: { secure: process.env.NODE_ENV === "production" },
   })
 );
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Routes
+
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+
+
 app.use("/api/auth", authRoutes);
 app.use("/api", mainRoutes);
 

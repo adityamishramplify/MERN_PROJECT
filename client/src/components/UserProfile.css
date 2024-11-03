@@ -1,0 +1,40 @@
+.user-profile-container {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.user-profile-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.userName,
+.userEmail {
+  margin: 0;
+}
+.navbar-pannel {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.navbar-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: gray;
+}
+#logout-button {
+  background-color: #d9534f;
+}
+.error {
+  color: red;
+}

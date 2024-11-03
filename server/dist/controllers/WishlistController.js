@@ -17,6 +17,7 @@ const Wishlist_1 = __importDefault(require("../models/Wishlist"));
 const Product_1 = __importDefault(require("../models/Product"));
 const getWishlistByUserId = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        console.log("req user --->", req.user);
         const wishlist = yield Wishlist_1.default.find({ user: req.params.userId }).populate("items.productId");
         if (!wishlist)
             return res.status(404).json({ message: "Wishlist not found" });

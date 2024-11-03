@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.isAuthenticated = void 0;
 const isAuthenticated = (req, res, next) => {
     if (req.isAuthenticated()) {
-        console.log("isAuthenticated ========>", req.isAuthenticated());
         return next();
     }
     res.status(401).json({ message: "Unauthorized" });

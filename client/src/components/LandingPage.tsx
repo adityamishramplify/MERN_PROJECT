@@ -5,7 +5,7 @@ import GoogleLoginButton from "./GoogleLoginButton";
 const LandingPage: React.FC = () => {
   return (
     <div style={styles.container}>
-      <h1>Welcome to Our Platform</h1>
+      <h1>Welcome to Mern Project</h1>
       <p>Please log in to continue</p>
       <GoogleLoginButton />
     </div>

@@ -56,13 +56,13 @@ const ProductDetails: React.FC = () => {
     <>
       <UserProfile />
       <div className="product-details">
+        {product.images.length > 0 && (
+          <img src={product.images[0]} alt={product.name} />
+        )}
         <h1>{product.name}</h1>
         <p>{product.description}</p>
         <p>Price: ${product.price.toFixed(2)}</p>
         <p>Stock: {product.stock}</p>
-        {product.images.length > 0 && (
-          <img src={product.images[0]} alt={product.name} />
-        )}
       </div>
     </>
   );

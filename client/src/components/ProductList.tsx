@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import UserProfile from "./UserProfile";
+import ProductCard from "./ProductCard";
+import "./ProductList.css";
+
 interface IProduct {
   _id: string;
   name: string;
@@ -50,18 +53,7 @@ const ProductList: React.FC = () => {
         <h1>Product List</h1>
         <div className="product-list">
           {products.map((product) => (
-            <div key={product._id} className="product-card">
-              <h2>{product.name}</h2>
-              <p>{product.description}</p>
-              <p>Price: ${product.price.toFixed(2)}</p>
-              <p>Stock: {product.stock}</p>
-              {product.images.length > 0 && (
-                <img
-                  src={`http://localhost:8000/${product.images[0]}`}
-                  alt={product.name}
-                />
-              )}
-            </div>
+            <ProductCard key={product._id} product={product} />
           ))}
         </div>
       </div>

@@ -4,20 +4,24 @@ import LandingPage from "./components/LandingPage";
 import ProductList from "./components/ProductList";
 import ProductDetails from "./components/ProductDetails";
 import AddProduct from "./components/AddProduct";
-function App() {
+import { UserProvider } from "./context/UserContext";
+import "./App.css";
+
+const App: React.FC = () => {
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-
-          <Route path="/products" element={<ProductList />} />
-          <Route path="/products/:id" element={<ProductDetails />} />
-          <Route path="/add-product" element={<AddProduct />} />
-        </Routes>
-      </Router>
+      <UserProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/products" element={<ProductList />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
+            <Route path="/add-product" element={<AddProduct />} />
+          </Routes>
+        </Router>
+      </UserProvider>
     </div>
   );
-}
+};
 
 export default App;
