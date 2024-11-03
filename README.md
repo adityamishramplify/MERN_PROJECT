@@ -1,5 +1,5 @@
 ## Project Overview
-Technostacks is a TypeScript-based e-commerce platform that allows users to view a list of products and add new products to the inventory. This platform is built with user-friendly interfaces and modern web technologies.
+This is a TypeScript-based e-commerce platform that allows users to view a list of products and add new products to the inventory. This platform is built with user-friendly interfaces and modern web technologies.
 
 ## Features
 - Add new products to the inventory
